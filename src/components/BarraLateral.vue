@@ -1,11 +1,27 @@
 <template>
     <header>
+        <div class="portifolio">
+            <div class="">
+                <p>Developer: Isaac Sousa</p>
+            </div>
+             <div class="logos">
+                <a href="https://www.linkedin.com/in/isaac-sousa-b45689233/" target="_blank" class="link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+                <a href="https://github.com/Isaac-Sousa-Dev" target="_blank" class="link">
+                    <ion-icon name="logo-github" style="text-decoration: none;"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/_isaacsousa0/" target="_blank" class="link">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>       
+             </div>
+        </div>
         <h1>
             <img src="../assets/tracker-logo.jpg" alt="" style="border-radius: 10px;">
         </h1>
         <button class="button" @click="alterarTema">
             {{ textoDoBotao }}
-        </button>
+        </button>    
     </header>
 </template>
 
@@ -59,5 +75,24 @@ header {
         padding: 2.5rem;
         height: auto;
     }
+   
+}
+.portifolio {
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3%;
+    color: antiquewhite;
+}
+.logos {
+    color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+.link{
+    text-decoration: none;
+    color: aliceblue;
 }
 </style>
