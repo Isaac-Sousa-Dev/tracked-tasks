@@ -5,16 +5,9 @@
           <barra-lateral @aoTemaAlterado="trocarTema"/>
       </div>
       <div class="column is-three-quarter conteudo">
-          <!-- Ouvindo o evento "aoSalvarTarefa" que foi emitido pelo FormularioVue-->
-          <FormularioVue @aoSalvarTarefa="salvarTarefa"/>
-          <div class="lista">
-            
-            <TarefaVue v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa" />
-            <BoxVue v-if="listaEstaVazia">
-              Você não está muito produtivo hoje :(
-            </BoxVue>
-          </div>
-          
+        <NotificacoesVue />
+         <!-- AQUI VAI A VIEW CORRESPONDENTE -->
+         <router-view></router-view>
       </div>  
       
   </main>
@@ -24,41 +17,24 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import BarraLateral from './components/BarraLateral.vue';
-import FormularioVue from './components/Formulario.vue';
-import TarefaVue from './components/Tarefa.vue';
-import ITarefa from './interfaces/ITarefas'
-import BoxVue from './components/Box.vue';
-
+import NotificacoesVue from './components/Notificacoes.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     BarraLateral,
-    FormularioVue,
-    TarefaVue,
-    BoxVue
+    NotificacoesVue
 },
   data() {
     return {
-      // lista de tarefas que esta vindo da interface ITarefa
-      tarefas: [] as ITarefa[],
       modoEscuroAtivo: false
     }
   },
-  computed: {
-    listaEstaVazia () : boolean {
-      return this.tarefas.length === 0
-    }
-  },
   methods: {
-    // Adicionando na lista de tarefas
-    salvarTarefa (tarefa: ITarefa) {
-      this.tarefas.push(tarefa)
-    },
     trocarTema (modoEscuroAtivo: boolean){
       this.modoEscuroAtivo = modoEscuroAtivo
     }
-  }
+  },
 });
 </script>
 

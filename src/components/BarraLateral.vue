@@ -21,7 +21,23 @@
         </h1>
         <button class="button" @click="alterarTema">
             {{ textoDoBotao }}
-        </button>    
+        </button>   
+        <nav class="panel mt-5">
+            <ul>
+                <li>
+                    <router-link to="/" class="link">
+                        <ion-icon name="list-outline"></ion-icon>
+                        tarefas
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/projetos" class="link"> 
+                        <ion-icon name="git-merge-sharp"></ion-icon>
+                        Projetos
+                    </router-link>
+                </li>
+            </ul>
+        </nav> 
     </header>
 </template>
 
@@ -94,5 +110,9 @@ header {
 .link{
     text-decoration: none;
     color: aliceblue;
+}
+nav{
+    text-align: left;
+    justify-content: left;
 }
 </style>

@@ -1,5 +1,8 @@
 <template>
     <section>
+        
+        <ion-icon name="time-outline" class="icone"></ion-icon>
+        
         <strong class="display">{{ tempoDecorrido }}</strong>
     </section>
 </template>
@@ -27,5 +30,9 @@ export default defineComponent({
 <style scoped>
 .display {
     color: var(--texto-primario);
+}
+.icone {
+    margin-right: 4px;
+    margin-top: 4px;
 }
 </style>
